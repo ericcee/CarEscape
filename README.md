@@ -14,6 +14,8 @@ It is for a educational purpose. (if you use it please mention that the code is 
 
 ![Rushhour Gameplay](https://github.com/ericcee/rushhourpics/blob/master/rh1.PNG?raw=true)
 
+### Including
+
 - [X] 4 Different Levels
 - [X] 35 Maps
 - [X] All free
