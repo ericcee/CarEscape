@@ -2,7 +2,7 @@
 
 ## *RushhourUnlimited is a OpenSource project*
 
-It is for a educational purpose. (if you use it please mention that the code is copyed from this repository.)
+It is for a educational purpose. (if you use it please mention that the code is copied from this repository.)
 
 ### Level Selection:
 
