@@ -58,6 +58,7 @@ public class Window extends JFrame {
 					Window.setCursor(Cursor.DEFAULT_CURSOR);
 					if(rh.isPuzzleSolved()){
 						infoBox("Moves made: " + rh.getAllMoves(), "Puzzle ended");
+						map.reset();
 						Window.dispose();
 					}
 					

@@ -23,4 +23,8 @@ public class Map {
 	public String toString(){
 		return "Map " + Nr;
 	}
+	
+	public void reset() {
+		for(Car c : cars) c.reset();
+	}
 }

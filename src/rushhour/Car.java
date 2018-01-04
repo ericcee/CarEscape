@@ -6,7 +6,7 @@ import java.awt.geom.Line2D;
 import java.util.ArrayList;
 
 public class Car {
-	private int x, y;
+	private int yorig, xorig, x, y;
 	private int lenght;
 	private boolean rotation;
 	private boolean isExitCar;
@@ -21,6 +21,8 @@ public class Car {
 		super();
 		this.x = x;
 		this.y = y;
+		xorig = x;
+		yorig = y;
 		this.lenght = lenght;
 		this.rotation = rotation;
 		this.color = color;
@@ -168,5 +170,11 @@ public class Car {
 
 	public void setSelected(boolean selected) {
 		this.selected = selected;
+	}
+	
+	public void reset() {
+		this.x = xorig;
+		this.y = yorig;
+		this.movesMade = 0;
 	}
 }
