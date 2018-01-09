@@ -32,7 +32,7 @@ public class LevelSelection extends JFrame {
 				if(node.isLeaf()){
 					Map selected = (Map)(node).getUserObject();
 					currentGame = new Window("Rush Hour", selected);
-					w.showWindow();
+					currentGame.showWindow();
 					try {
 						converter.reload();
 						addNodes(top);
