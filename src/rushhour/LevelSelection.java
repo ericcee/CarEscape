@@ -14,6 +14,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 
 public class LevelSelection extends JFrame {
 	private Converter converter = null;
+	private Window currentGame = null;
 	public LevelSelection(Converter conv){
 		this.converter = conv;
 		
@@ -30,7 +31,7 @@ public class LevelSelection extends JFrame {
 				DefaultMutableTreeNode node = (DefaultMutableTreeNode)t.getLastSelectedPathComponent();
 				if(node.isLeaf()){
 					Map selected = (Map)(node).getUserObject();
-					Window w = new Window("Rush Hour", selected);
+					currentGame = new Window("Rush Hour", selected);
 					w.showWindow();
 					try {
 						converter.reload();
