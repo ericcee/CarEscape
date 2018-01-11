@@ -31,17 +31,19 @@ public class Converter {
 			String[] columns = line.split(",");
 			int Nr = Integer.parseInt(columns[0]);
 			int Level = Integer.parseInt(columns[1]);
-			Car startcar = getCarFromCoords(Integer.parseInt(columns[2]), Integer.parseInt(columns[3]), true);
+			int MaxMoves = Integer.parseInt(columns[2]);
+			
+			Car startcar = getCarFromCoords(Integer.parseInt(columns[3]), Integer.parseInt(columns[4]), true);
 			cars.add(startcar);
 			
-			for(int i = 4; i < 34; i+=2){
+			for(int i = 5; i < 35; i+=2){
 				int pos1 = Integer.parseInt(columns[i]);
 				int pos2 = Integer.parseInt(columns[i+1]);
 				if(pos1 == -1) break;
 				cars.add(getCarFromCoords(pos1, pos2, false));
 			}
 			
-			thm = new Map(Nr, cars);
+			thm = new Map(Nr, cars, MaxMoves);
 			Level thl = getLevel(Level);
 			thl.addMap(thm);
 		}
@@ -60,7 +62,7 @@ public class Converter {
 	private Car getCarFromCoords(int pos1, int pos2, boolean isStartCar){
 		Point startPos = new Point((int)pos1%6, (int)pos1/6);
 		Point endPos = new Point((int)pos2%6,  (int)pos2/6);
-		boolean Rotation = startPos.getX() ==endPos.getX();
+		boolean Rotation = startPos.getX() == endPos.getX();
 		int Lenght = 0;
 		if(Rotation) Lenght = (int) (endPos.getY() - startPos.getY());
 		else Lenght = (int) (endPos.getX() - startPos.getX());

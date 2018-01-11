@@ -33,4 +33,7 @@ public class Rushhour {
 	public void setMap(Map map){
 		thisMap = map;
 	}
+	public int getMaxMoves(){
+		return thisMap.getMaxMoves();
+	}
 }
