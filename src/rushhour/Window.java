@@ -36,7 +36,7 @@ public class Window extends JFrame {
 	
 	
 	public Window(String title, Map map) throws HeadlessException {
-		super(title);
+		super(title+", "+map);
 		this.setSize(width, height + top + 3);
 		this.setDefaultCloseOperation(this.DISPOSE_ON_CLOSE);
 		
@@ -99,7 +99,7 @@ public class Window extends JFrame {
 					carGotSelected = false;
 					if(!oldpos.equals(selectedCar.getCoords(0))) selectedCar.moveMade(); // only if car got moved
 					selectedCar.setSelected(false);
-					Window.setTitle("Rush Hour, Moves made: " + rh.getAllMoves()+", Max Moves: " +rh.getMaxMoves());
+					Window.setTitle("Rush Hour, Moves made: " + rh.getAllMoves()+", Max Moves: " +rh.getMaxMoves()+", "+map);
 					drawField();
 					Window.setCursor(Cursor.DEFAULT_CURSOR);
 					if(rh.isPuzzleSolved()){

@@ -4,6 +4,7 @@ import java.awt.Container;
 import java.awt.Font;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -23,6 +24,7 @@ public class LevelSelection extends JFrame {
 		DefaultMutableTreeNode top = new DefaultMutableTreeNode("Levels");
 		JTree t = new JTree(top);
 		addNodes(top);
+		top.add(new DefaultMutableTreeNode("Random Map"));
 		
 		t.addTreeSelectionListener(new TreeSelectionListener() {
 			
@@ -30,15 +32,18 @@ public class LevelSelection extends JFrame {
 			public void valueChanged(TreeSelectionEvent e) {
 				DefaultMutableTreeNode node = (DefaultMutableTreeNode)t.getLastSelectedPathComponent();
 				if(node.isLeaf()){
-					Map selected = (Map)(node).getUserObject();
-					currentGame = new Window("Rush Hour", selected);
-					currentGame.showWindow();
-					try {
-						converter.reload();
-						addNodes(top);
-					} catch (NumberFormatException | IOException e1) {
-						// TODO Auto-generated catch block
-						e1.printStackTrace();
+					
+					if("Random Map".equals(node.getUserObject())){
+						Random rnd = new Random();
+						int lvl = rnd.nextInt(converter.getLevels().size()-1);
+						int mp = rnd.nextInt(converter.getLevels().get(lvl).getMaps().size()-1);
+						currentGame = new Window("Rush Hour", converter.getLevels().get(lvl).getMapByIndex(mp));
+						currentGame.showWindow();
+					}
+					else{
+						Map selected = (Map)(node).getUserObject();
+						currentGame = new Window("Rush Hour", selected);
+						currentGame.showWindow();
 					}
 				}
 				
