@@ -43,7 +43,7 @@ public class Converter {
 				cars.add(getCarFromCoords(pos1, pos2, false));
 			}
 			
-			thm = new Map(Nr, cars, MaxMoves);
+			thm = new Map(Nr, Level, cars, MaxMoves);
 			Level thl = getLevel(Level);
 			thl.addMap(thm);
 		}

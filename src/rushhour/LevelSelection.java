@@ -16,6 +16,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 public class LevelSelection extends JFrame {
 	private Converter converter = null;
 	private Window currentGame = null;
+	
 	public LevelSelection(Converter conv){
 		this.converter = conv;
 		
@@ -25,6 +26,7 @@ public class LevelSelection extends JFrame {
 		JTree t = new JTree(top);
 		addNodes(top);
 		top.add(new DefaultMutableTreeNode("Random Map"));
+		t.expandRow(0);
 		
 		t.addTreeSelectionListener(new TreeSelectionListener() {
 			

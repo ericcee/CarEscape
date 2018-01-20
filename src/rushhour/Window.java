@@ -105,6 +105,10 @@ public class Window extends JFrame {
 					if(rh.isPuzzleSolved()){
 						infoBox("Moves made: " + rh.getAllMoves(), "Puzzle ended");
 						map.reset();
+						
+						Map next = main.converter.getLevels().get(map.getLevel()-1).getMap(map.getNr()+1);
+						if(next!=null) (new Window("Rushhour", next)).showWindow();
+						
 						Window.dispose();
 					}
 					

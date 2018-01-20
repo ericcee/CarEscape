@@ -6,11 +6,13 @@ public class Map {
 	private ArrayList<Car> cars = null;
 	private int Nr = 0;
 	private int MaxMoves = 0;
+	private int level = 0;
 	
-	public Map(int Nr, ArrayList<Car> cars, int MaxMoves){
+	public Map(int Nr, int level, ArrayList<Car> cars, int MaxMoves){
 		this.cars = cars;
 		this.Nr = Nr;
 		this.MaxMoves = MaxMoves;
+		this.level = level;
 	}
 
 	public ArrayList<Car> getCars() {
@@ -32,5 +34,9 @@ public class Map {
 	
 	public int getMaxMoves(){
 		return MaxMoves;
+	}
+	
+	public int getLevel(){
+		return level;
 	}
 }
