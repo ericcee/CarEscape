@@ -1,8 +1,8 @@
-# CarjamUnlimited
+# RushhourUnlimited
 
 [![GitHub issues](https://img.shields.io/github/issues/ericcee/RushhourUnlimited.svg)](https://github.com/ericcee/RushhourUnlimited/issues)
 
-## *CarjamUnlimited is a OpenSource project*
+## *RushhourUnlimited is a OpenSource project*
 
 It is for a educational purpose. (if you use it please mention that the code is copied from this repository.)
 
